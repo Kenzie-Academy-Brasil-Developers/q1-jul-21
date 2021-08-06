@@ -1,10 +1,10 @@
-//variavel
+//variavel - tipos/tipagem
 //estrutura de repetição
 //estruturas de decisão
 //estrutura de dados
 
 
-//LET CONST
+//variaveis sempre LET ou CONST
 
 
 let x = 5;
