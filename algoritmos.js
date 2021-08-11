@@ -32,3 +32,43 @@ calcChange(20, 8, 1.5);
  * 3 - Implementar o passo a passo em programação. (Nesse passo vocês podem identificar sub-problemas)
  * 4 - Testa. Em caso de falhas, repete processo. (Debug é aqui!)
  */
+
+// "abcd" => ['a', 'b', 'c', 'd'];
+
+let str = "abcd";
+let arr = [];
+
+for (let i = 0; i < str.length; i++) {
+  arr.push(str[i]);
+}
+
+// arr[0]
+
+// arr[0] =  nome
+// arr[1] = sobrenome
+// arr[2] = idade
+// arr[3] = filhos
+// arr[4] = casado ou não
+// pessoa = ["Davis", "Peixoto", 3578, 3, true];
+pessoa["nome"] = "Davis";
+
+pessoa = {
+  nome: "Davis",
+  sobrenome: "Peixoto",
+  idade: 3578,
+  qtdFilhos: 3,
+};
+
+if (pessoa["qtdFilhos"] > 0) {
+  // ativa seguro para dependentes
+}
+
+// function fazAlgo(obj) {
+//   console.log(obj['nome'])
+// }
+
+// function escreveNome(nome) {
+//   console.log(nome)
+// }
+
+// escreveNome(obj['nome']);
