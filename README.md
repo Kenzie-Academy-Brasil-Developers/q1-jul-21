@@ -1,7 +1,3 @@
-# q1-jul-21
+# Q1 Julho 2021
 
-
-#Bem vindos ao mundo de git!
-#Lembrem "nunca faça git push antes de fazer git pull
-
-#GIT PULL *DEPOIS* GIT PUSH
+#Boas práticas de semântica no HTML

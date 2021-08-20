@@ -1,4 +1,79 @@
-.q1-jul{
-    color: red;
+/*
+TAG DO HTML = div, p, input, span, ....
+CLASS
+ID
+*/
+
+/*
+SELETOR {
+    PROPRIEDADE: VALOR DA PROPRIEDADE;
+}
+*/
+/*
+p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 2px;
+    font-family: Arial, sans-serif;
+    color:red;
+    font: italic bold 12px Arial;
+}*/
+
+/*.borda{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+
+    /*border: 1px solid black;
+}*/
+
+/*.margin{
+    /* top-right-bottom-left
+    
+    margin-top:2px;
+    margin-right: 1px;
+    margin-bottom:2px;
+    margin-left:1px;
+    
+    margin: 3px 1px 2px 4px;
+    margin: 2px 1px;
+}*/
+
+/*.item-menu li{
+    border: 1px solid red;
+}*/
+
+/*.nomeDaClass{
+
+}*/
+/*
+    #nomeDoId{
+    }
+*/
+.container-header{
+    background-color: #FF5F8F;
+    padding: 21px;
+    height: 91px;
+    box-sizing: border-box;
+}
+.container-header h1{
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: Roboto;
+}
+nav {
+    background-color: #525252;
+    height: 50px;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    float: left;
+    color: #FFFFFF;
     font-size: 16px;
 }
