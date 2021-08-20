@@ -50,7 +50,15 @@ p {
 /*
     #nomeDoId{
     }
-*/
+    */
+
+/* font-family: 'Roboto', sans-serif; */
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+}
+
 .container-header{
     background-color: #FF5F8F;
     padding: 21px;
@@ -61,19 +69,61 @@ p {
     color: #FFFFFF;
     font-size: 36px;
     font-weight: 700;
-    font-family: Roboto;
+    text-align: center;
 }
 nav {
     background-color: #525252;
-    height: 50px;
+    height: 38px;
+    padding-top: 8px;
+    margin-top: 2px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 nav ul{
     list-style: none;
+    overflow: hidden;
 }
 
 nav ul li{
     float: left;
     color: #FFFFFF;
     font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 70px;
+}
+
+nav ul li.item-menu-pesquisa{
+    float: right;
+    margin-right: 0;
+}
+
+nav ul li.item-menu-pesquisa input{
+    border: none;
+    border-radius: 3px;
+    padding: 3px 0;
+}
+nav ul li.item-menu-pesquisa button{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main{}
+
+article{
+    margin: 50px 0;
+    padding: 0 50px;
+}
+article h2{
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+article p{
+    font-weight: 300;
+    line-height: 1.5;
 }
