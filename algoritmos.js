@@ -72,3 +72,20 @@ if (pessoa["qtdFilhos"] > 0) {
 // }
 
 // escreveNome(obj['nome']);
+
+arr2 = []; // 800
+for (let i = 0; i < arr.length; i++) {
+  // arr2
+}
+
+arr3; // 300
+for (let j = 0; j < arr2.length; j++) {
+  // faz alguma coisa com arr[i] e arr[j]
+}
+
+for (let k = 0; k < arr3.length; j++) {
+  // faz alguma coisa com arr[i] e arr[j]
+}
+
+// 1000 * 1000 = 1.000.000 (1000 + 999 + 998 + 997) => n^2
+// 1000 + 800 + 300 = 2100 = n log n
