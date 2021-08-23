@@ -111,8 +111,6 @@ nav ul li.item-menu-pesquisa button{
 }
 
 /* CONTEÚDO PRINCIPAL */
-main{}
-
 article{
     margin: 50px 0;
     padding: 0 50px;
@@ -126,4 +124,41 @@ article h2{
 article p{
     font-weight: 300;
     line-height: 1.5;
+}
+
+section h2{
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    margin-bottom: 13px;
+}
+.nativeNoticias{
+    width: 387px;
+    height: 160px;
+}
+.nativeNoticias img{
+    float: left;
+    margin-right: 8px;
+}
+.nativeNoticias h4{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+}
+.nativeNoticias span{
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 6px;
+}
+.nativeNoticias p{
+    font-size: 16px;
+    line-height: 22px;
+    width: 191px;
+    height: 65px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
