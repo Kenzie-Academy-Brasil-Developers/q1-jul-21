@@ -162,3 +162,19 @@ section h2{
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+@media screen and (max-width:600px){
+    .nativeNoticias p{
+        font-size: 12px;
+        line-height: 22px;
+        width: 191px;
+        height: 65px;
+        color: red;
+    }
+}
+@media screen and (min-width:768px){
+    
+}
+@media screen and (min-width: 600px) and (max-width: 900px){
+
+}
