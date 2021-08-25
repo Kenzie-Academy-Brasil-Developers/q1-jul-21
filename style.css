@@ -178,3 +178,75 @@ section h2{
 @media screen and (min-width: 600px) and (max-width: 900px){
 
 }
+
+/*
+BEM = NOMECLATURAS DE CLASSES, PADRÃO DE ESCRITA
+
+B BLOCO
+
+.u-menu
+.formulario
+
+E ELEMENTO
+
+nome-do-bloco + 2 underlines + nome-do-elemento
+
+.u-menu__item{}
+.u-menu__link{}
+
+
+M MODIFICADOR
+
+QUERO MODIFICAR O BLOCO => nome-do-bloco + 2 hífens + nome-do-moficador
+QUERO MODIFICAR O ELEMENTO => nome-do-bloco + 2 underlines + nome-do-elemento + 2 hífens + nome-do-moficador
+
+
+.u-menu--dark{}
+
+.u-menu__item--disabled{}
+
+.u-menu .button-red{}
+
+//MENU
+.menu{}
+.menu__item{}
+.menu__item--dark{}
+.menu__link{}
+.menu__link--disabled{}
+.menu--mobile{}
+//FORMULARIO
+
+
+:hover //passei o mouse em cima
+:focus
+:active
+
+:first-child
+:last-child
+:nth-child
+
+:visited
+
+.menu__item:last-child{
+    margin-right: 0px;
+}
+.menu__item:hover{}
+.menu__item:first-child{}
+
+.menu__item, .menu__link{
+
+
+}
+.menu__link{
+
+}
+
+.button{
+    background-color:red;
+}
+.button:active{
+    background-color: blue;
+}
+
+
+*/
