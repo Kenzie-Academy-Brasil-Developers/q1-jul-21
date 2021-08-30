@@ -1,0 +1,40 @@
+.grid{
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: grid;
+    height: 500px;
+}
+.item{
+    margin: 5px;
+    background-color: tomato;
+    text-align: center;
+    font-size: 18px;
+    color:#ffffff;
+}
+
+.logo{
+    grid-area: logo;
+}
+.nav{
+    grid-area: nav;
+}
+.content{
+    grid-area: contente;
+}
+.sidenav{
+    grid-area:sidenav;
+}
+.advert{
+    grid-area: advert;
+}
+.footer{
+    grid-area: footer;
+}
+
+.grid-template-areas{
+    grid-template-areas: 
+    "logo nav nav"
+    "sidenav contente advert"
+    "sidenav footer footer";
+}

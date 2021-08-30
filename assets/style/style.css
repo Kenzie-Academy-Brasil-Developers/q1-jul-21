@@ -54,6 +54,9 @@ p {
 
 /* font-family: 'Roboto', sans-serif; */
 
+h1{
+    color:var(--color-title-xg);
+}
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #E5E5E5;
@@ -122,6 +125,7 @@ article h2{
     margin-bottom: 40px;
 }
 article p{
+    color: var(--color-p, pink, blue);
     font-weight: 300;
     line-height: 1.5;
 }

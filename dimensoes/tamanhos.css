@@ -1,0 +1,55 @@
+/*
+PX
+
+%
+
+EM => cada filho pega o valor do pai e faz vezes o valor de em, se tiver mais de um filho,
+vai sempre crescer esse valor
+
+REM => :root (em) ROOT = HTML
+cada filho pega o valor de root e fazer vezes o valor de rem, temos um valor mais estável
+
+parent => 12px
+child => 1.2rem (12*1.2) = 14,4px (valor que será renderizado no browser) 
+child => 1.2em (12*1.2) = 14,4px (valor que será renderizado no browser) 
+
+VW => viewport width: largura da tela que está renderizando o conteúdo 
+VH => viewport height: altura da tela que está renderizando o conteúdo
+*/
+
+/*.parent-box{
+    height: 200px;
+    width: 200px;
+    background-color: violet;
+}*/
+body{
+    font-size: 14px;
+}
+.parent-box{
+    height: 50vh;
+    width: 50vw;
+    background-color: violet;
+    font-size: 12px;
+}
+div{
+    height: 50%;
+    width: 50%;
+    background-color: yellow;
+    font-size: 1.2rem;
+}
+.grandson-box{
+    height: 50%;
+    width: 50%;
+    background-color: grey;
+}
+
+
+/*
+mobile
+mobile landscape
+tablet
+tablet landscape
+desktop
+*/
+
+
