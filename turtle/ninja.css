@@ -14,7 +14,6 @@
     left: 50%;
     top: 50%;
 }
-
 #turtle div{
     width: 15em;
     height: 15em;
@@ -41,6 +40,7 @@
 }
 #turtle div:before {
     left: 15%;
+    border-radius: 0 90% 0 90%;
     box-shadow: 6.85em 3.15em 0 white, -3.15em 6.7em 0 white, 3.7em 9.9em 0 white;
     transform: rotate(-25deg);
 }
@@ -57,6 +57,7 @@
 }
 #turtle div:after {
     left: 28.3%;
+    border-radius: 90% 0 90% 0;
     box-shadow: 6.85em -3.2em 0 white, 3.2em 6.7em 0 white, 9.9em 3.56em 0 white;
     transform: rotate(25deg);
 }
