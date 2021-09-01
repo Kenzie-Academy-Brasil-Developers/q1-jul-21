@@ -1,0 +1,126 @@
+/*
+Theme Name: KenzieFlix
+Author: Kenzie Academy
+Author URI: kenzie.com.br;
+Version: 1.0
+ 
+--------------------------------------------
+SUGESTÃO DE ESTRUTURAÇÃO BASE 
+--------------------------------------------
+**** DECLARAÇÃO DE VARIÁVEIS
+**** BODY
+**** TOPO
+**** RODAPÉ
+**** PÁGINA INICIAL
+*/
+
+/* VARIÁVEIS */
+:root{
+  --font: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --background-color: #00002E; 
+}
+
+/*BODY*/
+	body{
+		background-color: var(--background-color);
+		font-family: var(--font);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+/*TOPO*/
+	header.topo{
+		margin-right: auto;
+		margin-bottom: 15px;
+	}
+
+	.topo figure figcaption{
+		display: none;
+	}
+
+/*RODAPÉ*/
+	footer button{
+		border: 2px solid #fff;
+		background-color: var(--background-color);
+		color: #fff;
+		padding: 15px;
+		width: 180px;
+		cursor: pointer;
+		font-size: 1.1rem;
+		margin: 0 auto 15px auto;
+		border-radius: 4px;
+	}
+
+/*PÁGINA INICIAL*/
+	div.pg-home{
+		width: 100%;
+		text-align: center;
+	}
+
+	.pg-home header h2 {
+		color: #fff;
+		font-size: 1.8rem;
+		font-weight: 600;
+		margin: 0 auto 30px auto;
+	}
+
+	.pg-home ul {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 65px;
+	}
+
+	.pg-home ul li{
+		width: 186px;
+		cursor: pointer;
+	}
+
+	.pg-home figure figcaption {
+		display: none;
+	}
+
+	.img_user {
+		width: 168px;
+		margin: 10px 0;
+	}
+
+	.pg-home li:hover h3 {
+		border: 2px solid #fff
+	}
+
+	.pg-home ul li h3{
+		color: #fff;
+		margin-top: 12px;
+		font-size: 1.3rem;
+	}
+
+	.addPerfil img{
+		width: 130px;
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+
+@media  only screen and (min-width: 400px){
+	.pg-home ul {
+		width: 858px;
+		margin: 0 auto;
+	}
+
+	footer button{
+		margin-top: 50px;
+	}
+
+	.addPerfil img{
+		margin-bottom: 30px;
+	}
+}
+
+@media  only screen and (max-width: 700px){
+	.pg-home ul {
+		max-width: 500px;
+	}
+}
