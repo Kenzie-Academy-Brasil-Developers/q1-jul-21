@@ -4,78 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML e sua semântica</title>
-
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>**DOM**</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style/reset.css">
-    <link rel="stylesheet" href="/assets/style/style.css"></link>
-
 </head>
-<body> 
-  <header class="container-header">
-    <h1>Aqui pode ser logo/nome da empresa</h1>
-  </header>
-  <nav>
-    <ul class="u-menu">
-      <li class="u-menu__item">
-        <a href="/turtle/turlte.html" title="Dimensao">Turtle</a>  
-      </li>
-      <li>
-        <a href="/dimensoes/dimensao.html" title="Dimensao">Dimensao</a>  
-      </li>
-      <li>
-        <a href="/grid/grid.html" title="Usando Grid">Grid</a>
-      </li>
-      <li>
-        <a href="/sun/sun.html" title="Exemplo de pseudoelement">Sol</a>
-      </li>
-      <li class="u-menu__item-pesquisa">
-        <input />
-        <button class="button">Pesquisar</button>
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <article class="article">
-      <h2 class="article title-dark">Titulo da reportagem</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus natus harum officiis similique eveniet deleniti nihil a. Ullam ut consequuntur explicabo voluptatibus temporibus praesentium dolorum in, magnam enim nisi iure?</p>
-    </article>
-    <section>
-      <h2>Notícias das Olimpíadas</h2>
-      <div class="nativeNoticias">
-        <img src="./assets/images/image1.svg" alt="Atleta segurando medalha de prata" />
-        <h4>Atleta jovem é medalha nas Olimpíadas</h4>
-        <span>17 de Agosto 2021</span>
-        <p>Prata em Tóquio aos 13 anos, a Brasileira Rayssa Leal subiu ao pódio e conseguiu destaque nas rampas</p>
-      </div>
-      <div class="nativeNoticias">
-        <img src="./assets/images/image1.svg" alt="Atleta segurando medalha de prata" />
-        <h4>Atleta jovem é medalha nas Olimpíadas</h4>
-        <span>17 de Agosto 2021</span>
-        <p>Prata em Tóquio aos 13 anos, a Brasileira Rayssa Leal subiu ao pódio e conseguiu destaque nas rampas</p>
-      </div>
-      <div class="nativeNoticias">
-        <img src="./assets/images/image1.svg" alt="Atleta segurando medalha de prata" />
-        <h4>Atleta jovem é medalha nas Olimpíadas</h4>
-        <span>17 de Agosto 2021</span>
-        <p>Prata em Tóquio aos 13 anos, a Brasileira Rayssa Leal subiu ao pódio e conseguiu destaque nas rampas</p>
-      </div>
-    </section>
+<body>  
+  <main> 
+    <div class="timer">
+      <h1>
+        <time>00:00:00</time>
+      </h1>
+      <button id="start">Começar</button>
+      <button id="stop">Parar</button>
+      <button id="reset">Zerar</button>
+    </div>   
   </main>
-  <footer>
-    <!-- <p>Marcação de direitos por <cite>Isabella Bertini</cite></p> -->
-  </footer>
+  <script src="index.js"></script>
 </body>
 </html>
-
-<!-- <header></header>
-  <footer></footer>
-  <nav></nav>
-  <section></section>
-  <article></article>
-  <main></main>
-  <aside></aside>
-  <button></button> -->
