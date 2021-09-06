@@ -3,18 +3,27 @@
  elemento que estiver contendo o nome do ID que você passar pra ele
  
 */
+const starting = document.getElementById('start');
 // const starting = document.getElementById('start');
 /* 
 getElementsByClassName() => esse método retorna toda a coleção de elemetos
 que possuem essa classe
 */
 
+const myTimer = document.getElementsByClassName('timer');
+console.log(myTimer);
 // const myTimer = document.getElementsByClassName('timer');
 // const button = document.getElementsByTagName('button');
 // const resetButton = document.querySelector('#reset');
 // const itemTimer = document.querySelector('.timer');
 
+const button = document.getElementsByTagName('button');
+console.log(button);
 /**********************************************************************/
+
+const resetButton = document.querySelector('#reset');
+const itemTimer = document.querySelector('.timer');
+console.log(resetButton);
 
 // starting.addEventListener('click', function(event){
     //faz alguma coisa
@@ -22,7 +31,6 @@ que possuem essa classe
 // });
 
 /**********************************************************************/
-
 /**
  * Construir uma lista de amigos dinâmicamente
  * passo 1 - criar os elementos
@@ -39,12 +47,9 @@ que possuem essa classe
 
 // appendChild
 /*
-
 elemento no qual eu quero inserir outro elemento => itemLista
 elemento que vai ser inserido => itemTexto
-
 */
-
 
 const lista = document.querySelector("ul");
 
@@ -52,23 +57,45 @@ function criarItemLista(){
     const itemLista = document.createElement("li");
     const itemTexto = document.createElement("h2");
 
-    itemTexto.innerText = "Hudson"; 
+    //itemTexto.innerText = "Hudson";
+    const textInput = document.querySelector("#nameList");
+    itemTexto.innerText = textInput.value;
 
     itemLista.appendChild(itemTexto);
 
     lista.appendChild(itemLista);
 }
 
-// criarItemLista();
+function removeItemLista(event){
+    //pegar o parent no html
+    //pegar o último child desse parent
+    //remover o último child da lista
+
+    const parentList = document.querySelector('ul');
+    const ultimoChild = parentList.lastChild;
+    ultimoChild.remove();
+}
+
+function removeItemNoMeioDaLista(){
+    const itemRemover = document.querySelector('ul li:nth-child(2)');
+    console.log(itemRemover);
+
+    itemRemover.remove();
+}
 
 /**
-
 addEventListener
-
 button.addEventListener(evento, funcao)
-
 */
+
+//adiciona item na lista
 
 const botaoAddAmigo = document.querySelector('button');
 
 botaoAddAmigo.addEventListener('click', criarItemLista);
+
+//remove último da lista
+
+const botaoRemoveAmigo = document.querySelector('#remove');
+
+botaoRemoveAmigo.addEventListener('click', removeItemLista);
