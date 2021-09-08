@@ -167,7 +167,15 @@ const listaAmigos = [
     }
 ]
 
-console.log(listaAmigos);
+//acessa valor do 1 nó de objeto dentro do array
+console.log(listaAmigos[0].nome);
+//acessa valor do 2 nó de objeto dentro do array
+console.log(listaAmigos[1].nome);
+
+//usando um looping para acessar os valores de dentro do Array de Objetos
+for(let i = 0; i < listaAmigos.length; i++){
+    console.log(listaAmigos[i].nome + ' ' + listaAmigos[i].sobrenome);
+}
 
 /*======================================================================================= */
 
