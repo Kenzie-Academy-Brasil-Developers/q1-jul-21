@@ -11,19 +11,19 @@ que possuem essa classe
 */
 
 const myTimer = document.getElementsByClassName('timer');
-console.log(myTimer);
+//console.log(myTimer);
 // const myTimer = document.getElementsByClassName('timer');
 // const button = document.getElementsByTagName('button');
 // const resetButton = document.querySelector('#reset');
 // const itemTimer = document.querySelector('.timer');
 
 const button = document.getElementsByTagName('button');
-console.log(button);
+//console.log(button);
 /**********************************************************************/
 
 const resetButton = document.querySelector('#reset');
 const itemTimer = document.querySelector('.timer');
-console.log(resetButton);
+//console.log(resetButton);
 
 // starting.addEventListener('click', function(event){
     //faz alguma coisa
@@ -54,6 +54,7 @@ elemento que vai ser inserido => itemTexto
 const lista = document.querySelector("ul");
 
 function criarItemLista(){
+    
     const itemLista = document.createElement("li");
     const itemTexto = document.createElement("h2");
 
@@ -92,10 +93,122 @@ button.addEventListener(evento, funcao)
 
 const botaoAddAmigo = document.querySelector('button');
 
-botaoAddAmigo.addEventListener('click', criarItemLista);
+botaoAddAmigo.addEventListener('click', capturaInformacaoForm);
 
 //remove último da lista
 
 const botaoRemoveAmigo = document.querySelector('#remove');
 
 botaoRemoveAmigo.addEventListener('click', removeItemLista);
+
+
+/* EXEMPLO DE CURRENT TARGET E TARGET*/
+//const body = document.body;
+//const botao = document.querySelector('#remove');
+
+/*body.addEventListener('click', function(event){
+    console.log(event.currentTarget);   // é o elemento que está ouvindo o evento
+    console.log(event.target); // é o elemento que dispara/aciona o evento
+}*/
+
+
+//array com informações
+//objeto com informações
+
+function adicionaArray(){
+    const amigos = ['Ana', 'Joana', 'Mariana'];
+
+    const lista = document.querySelector("ul");
+
+    for(let i = 0; i < amigos.length; i++){
+        //é onde eu vou criar os elementos do html e vou escrever nele via DOM
+        const itemLista = document.createElement("li");
+        const itemTexto = document.createElement("h2");
+
+        itemTexto.innerText = amigos[i];
+        console.log(amigos[i]);
+
+        itemLista.appendChild(itemTexto);
+
+        lista.appendChild(itemLista);
+
+    }
+}
+
+//OBJETO
+const amigo = new Object();
+
+amigo.nome = 'Isabella';
+amigo.sobrenome = 'Bertini';
+amigo.idade = 27;
+
+console.log(amigo);
+console.log(amigo.nome);
+
+//OBJETO
+const listaAmigo = {
+    nome: 'Isabella',
+    sobrenome: 'Bertini',
+    idade: 27,
+    cidade: 'São Carlos',
+    estado: 'SP'
+}
+console.log(listaAmigo);
+console.log(listaAmigo.sobrenome);
+
+const listaAmigos = [
+    {
+        nome: 'Isabella',
+        sobrenome: 'Bertini'
+    },
+    {
+        nome: 'Maria',
+        sobrenome: 'Porcina'
+    }
+]
+
+console.log(listaAmigos);
+
+/*======================================================================================= */
+
+function criarItemObjeto(){
+    const listaAmigo = {
+        nome: 'Isabella',
+        sobrenome: 'Bertini',
+        idade: 27,
+        cidade: 'São Carlos',
+        estado: 'SP'
+    }
+    
+    const itemLista = document.createElement("li");
+    const itemTexto = document.createElement("h2");
+
+    itemTexto.innerText = listaAmigo.sobrenome + listaAmigo.nome;
+
+    itemLista.appendChild(itemTexto);
+
+    lista.appendChild(itemLista);
+}
+
+function capturaInformacaoForm(){
+    const nomeValue = document.getElementById('nameList').value;
+    const lastValue = document.getElementById('lastList').value;
+
+    const formInfo = {
+        name: nomeValue,
+        sobrenome: lastValue
+    }
+
+    console.log(formInfo);
+
+    const itemLista = document.createElement("li");
+    const itemTexto = document.createElement("h2");
+
+    itemTexto.innerText = formInfo.sobrenome + formInfo.name;
+
+    itemLista.appendChild(itemTexto);
+
+    lista.appendChild(itemLista);
+
+    //DESAFIO: adicionar input pra idade, só vai adicionar na lista se a idade for > 21anos
+}
