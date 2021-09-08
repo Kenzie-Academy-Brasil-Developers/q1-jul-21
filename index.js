@@ -167,6 +167,10 @@ const listaAmigos = [
     }
 ]
 
+//adiciona objeto no array
+listaAmigos.push({nome: 'Luciano', sobrenome: 'Feder'});
+console.log(listaAmigos);
+
 //acessa valor do 1 nó de objeto dentro do array
 console.log(listaAmigos[0].nome);
 //acessa valor do 2 nó de objeto dentro do array
