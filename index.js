@@ -1,64 +1,116 @@
-/**********************TO-D0-LIST********************************/
+//metodos de string
 
-//criar uma lista dinamica via input - OK
-//armazenar o valor em um array - OK
-//QUANDO der check - tem que mudar o css - OK
-//poder excluir item da lista - OK
+//lowercase
+const sentence = 'Hoje o Dia Amanheceu muito QUENTE';
 
-const toDoList = [];
-const list  = document.getElementById("listItem");
-const botaoAdiciona = document.querySelector('button');
+sentence.toLowerCase();
+//"hoje o dia amanheceu muito quente"
 
-//CRIA ITEM NA LISTA
-function criaItemLista(){
+//uppercase
+sentence.toUpperCase();
+//"HOJE O DIA AMANHECEU MUITO QUENTE"
 
-    const valueList = document.getElementById("itemList");
 
-    const itemLista = document.createElement("li");
-    const itemInput = document.createElement("input");
-    itemInput.type = "checkbox";
-    const itemLabel = document.createElement("label");
-    const itemSpan = document.createElement("span");
-    itemSpan.innerText = "x";
+//split
 
-    itemLista.appendChild(itemSpan);
+function splitString(stringInteira, separador){
+    const arrayStrings = stringInteira.split(separador);
 
-    const nameValue = valueList.value;
-    itemLabel.innerText = nameValue;
+    //console.log('A string original:', stringInteira);
+    //console.log('Separador: ', separador);
+    //console.log('Resultado: ', arrayStrings);
 
-    itemLista.appendChild(itemInput);
-    itemLista.appendChild(itemLabel);
-    
-    list.appendChild(itemLista);
-
-    //ADICIONA ITEM NO ARRAY
-    toDoList.push(nameValue);
+    return arrayStrings;
 }
 
-//ADICIONA A CLASS QUANDO CHECKED
-function checked(event){
-    const checkElement = event.target;
+const tempoString = 'Hoje o dia amanheceu muito quente';
 
-    checkElement.parentNode.classList.toggle("feito");
-}
+const espaco = ' ';
 
-//EXCLUI ITEM DA LISTA
-function identificarItem(event){
-    const span = event.target;
-   
-    if(span.tagName === "SPAN"){
-        removerItem(span);
+splitString(tempoString,espaco);
+
+const mesesString = 'Jan,Fev/Mar,Abr/Mai/Jun,Jul/Ago/Set/Out/Nov/Dez';
+
+/*array = [
+        'jan', 'fev/mar', 'Abr/Mai/Jun', 'Jul/Ago/Set/Out/Nov/Dez'
+]*/
+
+//console.log(mesesString.split(','));
+
+//split(string, separador);
+//split(separador)
+
+//JOIN
+const frutas = ['1254', 'Melão com manga', 'Morango com chocolate', 'Uva'];
+
+//console.log(frutas.join());
+
+//metodos de array
+
+//FOREACH
+
+//foreach(element,index,array) {}
+
+const arrayNumeros = [1,2,3,4,5,6];
+
+function verificaPares(elemento){
+    if(elemento % 2 == 0){
+        console.log(elemento);
     }
+};
+
+//arrayNumeros.forEach(verificaPares);
+const novoArray = [];
+
+arrayNumeros.forEach(numero => {
+    if(numero % 2 == 0){
+
+        console.log(numero);
+
+        novoArray.push(numero);//construir um array com os pares
+        console.log(novoArray);
+
+        return numero;
+    };
+});
+
+const arrayMarcas = [
+    {marca: 'Ford', modelo: 'Focus', ano: '2001' },
+    {marca: 'Fiat', modelo: 'Palio' },
+    {marca: 'Audi', modelo: 'A3', ano: '2019' }
+];
+
+arrayMarcas.forEach( textString => {
+    console.log("Marca: " + textString.marca + " - modelo: " + textString.modelo);
+});
+
+
+function nome(){
+    let nome = 'Meu nome';
+    return nome;
 }
 
-function removerItem(span){
-    span.parentElement.remove();
+nome => { 
+    return nome = 'Meu nome'; 
 }
 
-botaoAdiciona.addEventListener('click', criaItemLista);
+//includes
+const array1 = [1, 2, 3];
 
-list.addEventListener("click", checked);
+console.log(array1.includes(2));
+// expected output: true
 
-list.addEventListener("click", identificarItem);
+const pets = ['cat', 'dog', 'bat'];
 
-//DESAFIO => RETIRAR O ITEM EXCLUIDO DO ARRAY
+console.log(pets.includes('cat')); 
+//a comparação é case sensitive, tem que ser exatamente igual Cat NÃO É IGUAL cat
+// expected output: true
+
+console.log(pets.includes('aaat'));
+// expected output: false
+
+
+
+
+
+
