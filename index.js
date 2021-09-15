@@ -109,7 +109,19 @@ console.log(pets.includes('cat'));
 console.log(pets.includes('aaat'));
 // expected output: false
 
+//MAP
+const numeros = [1,4,9,16];
 
+const novosNumeros = numeros.map(num => num * 2);
+
+console.log(novosNumeros);
+
+//SORT
+const fruits = ['laranja', 'melancia', 'banana', 'kiwi'];
+
+console.log(fruits.sort());
+
+const numbers = []
 
 
 
