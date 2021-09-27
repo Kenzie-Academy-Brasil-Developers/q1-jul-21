@@ -3,3 +3,35 @@ body,p,main,ul,li,img,figure,div{
     margin: 0;
     padding: 0;
 }
+
+header{
+    text-align: center;
+    background-color: #2196f3;
+    padding: 20px;
+    color: #fff;
+}
+main{
+    background-color: #e8e8e8;
+    
+}
+.vitrineProdutos{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.vitrineProdutos .vitrineProdutos__vitrine{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+.vitrineProdutos .vitrineProdutos__vitrine__produto{
+    flex-basis: 30%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.vitrineProdutos .vitrineProdutos__vitrine__produto img{}
+.vitrineProdutos .vitrineProdutos__vitrine__produto h2{}
+.vitrineProdutos .vitrineProdutos__vitrine__produto p{}
+.vitrineProdutos .vitrineProdutos__vitrine__produto button{}
