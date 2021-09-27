@@ -1,4 +1,8 @@
 
+//*****************************/
+//EXEMPLO ADDEVENTLISTENER COM FOR -> CAPTURING
+//*******************************/
+
 //const produtos = document.querySelectorAll(".vitrineProdutos__vitrine li button")
 
 //  for(let i = 0; i< produtos.length;i++){
@@ -7,13 +11,17 @@
 
 //  }
 
-
+//**************************************/
+//EXEMPLO ADDEVENTLISTENER  COM FOREACH -> CAPTURING
+//*************************************/
 // produtos.forEach(function(produto){
 //     produto.addEventListener("click", addCarrinho)
 // })
 
 
-
+//**************************************/
+//EXEMPLO BUBBLING
+//*************************************/
 const vitrine = document.querySelector(".vitrineProdutos__vitrine")
 vitrine.addEventListener("click", interceptar)
 
@@ -34,7 +42,9 @@ function addCarinho(){
 }
 
 
-
+//**************************************/
+//EXEMPLO BUBBLING
+//*************************************/
 const div1 = document.getElementById("div1")
 div1.addEventListener("click", function(evt){
     setTimeout(function(){
