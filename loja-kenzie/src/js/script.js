@@ -1,28 +1,27 @@
+const carrosselDestaque = document.querySelector(".carrosselDestaque img")
+const urlsArray = ["./src/img/1.png","./src/img/2.png","./src/img/3.png","./src/img/4.png","./src/img/5.png"]
 
-//*****************************/
-//EXEMPLO ADDEVENTLISTENER COM FOR -> CAPTURING
-//*******************************/
-
-//const produtos = document.querySelectorAll(".vitrineProdutos__vitrine li button")
-
-//  for(let i = 0; i< produtos.length;i++){
+function carrosselStart(img,urls){
     
-//         produtos[i].addEventListener("click", addCarrinho)
+    let contador = 0
+    
+    setInterval(function(){
+       
+        if(contador < urls.length){
+            img.src = urls[contador]
+            contador++
+        }else{
+            contador =  0 
+        }
+        
+    },1000);
 
-//  }
-
-//**************************************/
-//EXEMPLO ADDEVENTLISTENER  COM FOREACH -> CAPTURING
-//*************************************/
-// produtos.forEach(function(produto){
-//     produto.addEventListener("click", addCarrinho)
-// })
+}
+carrosselStart(carrosselDestaque,urlsArray)
 
 
-//**************************************/
-//EXEMPLO BUBBLING
-//*************************************/
 const vitrine = document.querySelector(".vitrineProdutos__vitrine")
+const carrinho  = document.querySelector(".carrinho>ul")
 vitrine.addEventListener("click", interceptar)
 
 function interceptar(evt){
@@ -33,57 +32,16 @@ function interceptar(evt){
     if(button.tagName === "BUTTON"){
         
         const produto  = button.closest("li")
-
+        
+        adicionarProdutoCarrinho(carrinho,produto)
+      
     }
 }
 
-function addCarinho(){
-    console.log("adicionou")
-}
+function adicionarProdutoCarrinho(carrinho,produto){
+    carrinho.appendChild(produto)
+}   
 
 
-//**************************************/
-//EXEMPLO BUBBLING
-//*************************************/
-const div1 = document.getElementById("div1")
-div1.addEventListener("click", function(evt){
-    setTimeout(function(){
-     div1.style.backgroundColor = "blue"
-    }, 1100)
-})
 
 
-const div2 = document.getElementById("div2")
-div2.addEventListener("click", function(evt){
-    setTimeout(function(){
-        div2.style.backgroundColor = "blue"
-    }, 1000)
-})
-
-const div3 = document.getElementById("div3")
-div3.addEventListener("click", function(evt){
-    setTimeout(function(){
-        div3.style.backgroundColor = "blue"
-    }, 900)
-
-})
-
-const div4 = document.getElementById("div4")
-div4.addEventListener("click", function(evt){
-
-    setTimeout(function(){
-        div4.style.backgroundColor = "blue"
-    }, 800)
-
-    
-})
-
-const div5 = document.getElementById("div5")
-div5.addEventListener("click", function(evt){
-
-    setTimeout(function(){
-        div5.style.backgroundColor = "blue"
-    }, 500)
-  
-    
-})
