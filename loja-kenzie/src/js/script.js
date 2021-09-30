@@ -1,3 +1,4 @@
+
 const carrosselDestaque = document.querySelector(".carrosselDestaque img")
 const urlsArray = ["./src/img/1.png","./src/img/2.png","./src/img/3.png","./src/img/4.png","./src/img/5.png"]
 const vitrinePrincipal = document.querySelector(".vitrineProdutos__vitrine")
@@ -59,7 +60,7 @@ const templateProduto = ({id,produtoNome,imageUrl,preco,precoPromocional,oferta}
     return li
 }
 
-//LISTAR PRODUTOS -> FUNÇÃO TOTALMENTE PURA 
+// 1- LISTAR PRODUTOS -> FUNÇÃO TOTALMENTE PURA 
 const listarProdutos = (arrayProdutos, callTemplateProduto, vitrine) =>{
    
     vitrine.innerHTML = ""
@@ -95,26 +96,92 @@ function interceptar(evt){
 
     if(button.tagName === "BUTTON"){
         
-        //const produto  = button.closest("li")
-        //const produto  = produto.cloneNode("li")
        const idProduto  =  button.getAttribute("data-id")
         adicionarProdutoCarrinho(idProduto)
     }
 }
 
-const carrinho = []
+let carrinho = []
 const adicionarProdutoCarrinho = (idProduto) => {
 
     const produtoFiltro  = dataProdutos.find((produto)=> produto.id == idProduto)
 
-    carrinho.push(produtoFiltro)
-    listarProdutos(carrinho,templateProduto,vitrineCarrinho)
+    if(produtoFiltro.estoque > 1){
+        carrinho.push(produtoFiltro)
+
+        listarProdutos(carrinho,templateProduto,vitrineCarrinho)
+
+        quantidadeDeProdutos()
+        notificacao("Produto Adicionado com sucesso", true)
+    }else{
+        notificacao("Estoque baixo", false)
+    }
+   
 }
 
+//interceptador 
+//indentificar esse produto
+vitrineCarrinho.addEventListener("click", interceptarProdutoCarrinho)
+function interceptarProdutoCarrinho(evt){
+      
+    const button = evt.target
+    if(button.tagName === "BUTTON"){
+    
+       const idProduto  =  button.getAttribute("data-id")
+        removerProduto(idProduto)
+    }
+}
 
-
+//TODO OS PRODUTOS ESTÃO EM UMA ARRAY 
+//EU TENHO APENAS O ID
+const removerProduto = (idProduto) =>{
   
+  
+    //PRIMEIRA FORMA REMOVER 
+    const produtoFiltro  = dataProdutos.find((produto)=> produto.id == idProduto)
+    const index = carrinho.indexOf(produtoFiltro)
+    carrinho.splice(index,1)
+    listarProdutos(carrinho,templateProduto,vitrineCarrinho)
 
+    //SEGUNDA FORMA DE REMOVER 
+    // const produtoFiltro  = carrinho.filter((produto)=> produto.id !== Number(idProduto))
+    // carrinho = [...produtoFiltro]
+    
+    listarProdutos(carrinho,templateProduto,vitrineCarrinho)
+    quantidadeDeProdutos()
+}   
 
+const quantidadeDeProdutos = () => {
+    const qtdProdutos = document.getElementById("qtdProdutos")
+    const precoTotal = document.getElementById("precoTotal")
+    qtdProdutos.innerText = `QTD Produtos: ${carrinho.length}`
+  
+    const totalPreco = carrinho.reduce(function(total,produto){
 
+        if(produto.oferta === true){
+            return total + Number(produto.precoPromocional)
+        }else{
+            return total + Number(produto.preco)
+        }
+
+    },0)
+    precoTotal.innerText = `Total: R$ ${totalPreco},00`
+}
+
+const notificacao = (mensagem,estado)=>{
+    const notificacao = document.querySelector(".notificacao")
+    const span = document.querySelector(".notificacao span")
+    if(estado === true){
+        notificacao.classList.add("sucesso")
+        span.innerText = mensagem
+    }else{
+        notificacao.classList.add("erro")
+        span.innerText = mensagem
+    }
+
+    setTimeout(function(){
+        notificacao.classList.remove("erro")
+        notificacao.classList.remove("sucesso")
+    }, 1500)
+}
 

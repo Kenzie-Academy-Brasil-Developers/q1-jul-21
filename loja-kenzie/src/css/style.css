@@ -3,6 +3,10 @@ body,p,main,ul,li,img,figure,div{
     margin: 0;
     padding: 0;
 }
+body{
+    position: relative;
+    height: 100%;
+}
 
 header{
     text-align: center;
@@ -161,3 +165,28 @@ main{
 .carrinho .carrinhoTotal button ~ button{
     background-color: #e91e63;
 }
+
+.notificacao{
+    
+    display: inline-block;
+    padding: 20px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    left: -100%;
+    transition: 0.5s;
+
+}
+.notificacao.sucesso{
+    background-color: #8bc34a;
+    left: 10px;
+    transition: 0.5s;
+}
+.notificacao.erro{
+    background-color: red;
+    left: 10px;
+    transition: 0.5s;
+}
+.notificacao span{}
