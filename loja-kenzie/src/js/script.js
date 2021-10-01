@@ -225,7 +225,6 @@ const filtroCategoria = (filtro, categoriaFiltro)=>{
 
     const produtosFiltrados = dataProdutos.filter((produto) => produto[categoriaFiltro] === filtro)
     
-
     listarProdutos(produtosFiltrados,templateProduto,vitrinePrincipal)
 }   
 
