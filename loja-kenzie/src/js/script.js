@@ -106,12 +106,19 @@ const adicionarProdutoCarrinho = (idProduto) => {
 
     const produtoFiltro  = dataProdutos.find((produto)=> produto.id == idProduto)
 
+    //VERIFICA SE TEM ESTOQUE
     if(produtoFiltro.estoque > 1){
+
+        //ADICIONA O PRODUTO NO CARRINHO 
         carrinho.push(produtoFiltro)
 
+        //ATUALIZA VITRINE DO CARRINHO 
         listarProdutos(carrinho,templateProduto,vitrineCarrinho)
 
+        //ATUALIZA AS INFOIRMAÇÕES DO CARRINHO 
         quantidadeDeProdutos()
+
+        //NOTIFICA O USUÁRIO
         notificacao("Produto Adicionado com sucesso", true)
     }else{
         notificacao("Estoque baixo", false)
@@ -151,13 +158,20 @@ const removerProduto = (idProduto) =>{
     quantidadeDeProdutos()
 }   
 
+//ATUALIZAR STATUS DO CARRINHO
 const quantidadeDeProdutos = () => {
+
+    //SELECIONA ELEMENTOS HTML QTD E PREÇO
     const qtdProdutos = document.getElementById("qtdProdutos")
     const precoTotal = document.getElementById("precoTotal")
+
+    //SELECIONA O NOSSO ARRAY CARRINHO, PEGA O TOTAL DE PRODUTOS ARMAZENADO
     qtdProdutos.innerText = `QTD Produtos: ${carrinho.length}`
   
+    //UTILIZAMOS O REDUCE PARA PEGAR O TOTAL DO PREÇO/ DOS PRODUTOS QUE ESTÃO NO CARRINHO
     const totalPreco = carrinho.reduce(function(total,produto){
 
+        //PRODUTO EM OFERTA/ SOMAR O PREÇO PROMOCIONAL
         if(produto.oferta === true){
             return total + Number(produto.precoPromocional)
         }else{
@@ -168,20 +182,88 @@ const quantidadeDeProdutos = () => {
     precoTotal.innerText = `Total: R$ ${totalPreco},00`
 }
 
-const notificacao = (mensagem,estado)=>{
-    const notificacao = document.querySelector(".notificacao")
+
+//FUNÇÃO DE NOTIFICAÇÃO
+const notificacao = (mensagem,estado)=> {
+    
+    const divNotificacao = document.querySelector(".notificacao")
     const span = document.querySelector(".notificacao span")
+
     if(estado === true){
-        notificacao.classList.add("sucesso")
+        divNotificacao.classList.add("sucesso")
         span.innerText = mensagem
     }else{
-        notificacao.classList.add("erro")
+        divNotificacao.classList.add("erro")
         span.innerText = mensagem
     }
 
     setTimeout(function(){
-        notificacao.classList.remove("erro")
-        notificacao.classList.remove("sucesso")
+        divNotificacao.classList.remove("erro")
+        divNotificacao.classList.remove("sucesso")
     }, 1500)
 }
 
+//FILTRO POR PREÇO
+let statusFiltro = false
+const filtroPreco = ()=>{
+    
+    let produtosFiltrados   = [...dataProdutos]
+    
+    if(!statusFiltro){
+        produtosFiltrados  = produtosFiltrados.sort((a,b)=> a.preco - b.preco)
+        statusFiltro = true
+    }else{
+        produtosFiltrados  = produtosFiltrados.sort((a,b)=>  b.preco - a.preco )
+        statusFiltro = false
+    }
+    
+    listarProdutos(produtosFiltrados,templateProduto,vitrinePrincipal)
+}
+
+//FILTRO POR CATEGORIA
+const filtroCategoria = (filtro, categoriaFiltro)=>{
+
+    const produtosFiltrados = dataProdutos.filter((produto) => produto[categoriaFiltro] === filtro)
+    
+
+    listarProdutos(produtosFiltrados,templateProduto,vitrinePrincipal)
+}   
+
+// SELEÇÃO USUÁRIO 
+const menuFiltro  = document.querySelector("nav>ul")
+const interceptarFiltro = (evt) =>{
+  
+    evt.preventDefault()
+    if(evt.target.tagName === "A"){
+        
+        const filtroSelecionado = evt.target.innerText.toLowerCase()
+        
+        if(filtroSelecionado === "home"){
+
+            listarProdutos(dataProdutos,templateProduto,vitrinePrincipal)
+
+        }else if(filtroSelecionado === "preço"){
+
+            filtroPreco()
+
+        }else if(filtroSelecionado === "oferta"){
+
+            filtroCategoria(true, "oferta")
+            
+        }else{
+
+            filtroCategoria(filtroSelecionado, "categoria")
+
+        }
+    }
+}
+menuFiltro.addEventListener("click", interceptarFiltro)
+// Filtro por preço (ordenar a vitrine do mais caro para o mais barado e vice-versa) *
+// Filtro por categoria *
+// Filtro por oferta *
+// Todos os produtos *
+
+// ---
+// Adicionar uma tag de baixo estoque no template do produto.
+// Adicionar funcionalidade para  limpar todos os produtos no carrinho
+// Aplicar mais notificações
