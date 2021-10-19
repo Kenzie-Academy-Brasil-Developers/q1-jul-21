@@ -62,7 +62,7 @@ class CarrinhoModel {
         return dataProdutos.find((produto)=> produto.id == idProduto)
     }
 
-    calcularTotal(){
+    calcularTotal(callCalculaFrete){
         
         const totalPreco = this._produtos.reduce(function(total,produto){
             
@@ -74,15 +74,36 @@ class CarrinhoModel {
 
         },0)
 
-        this.precoTotal = totalPreco
+        const valorFrete = callCalculaFrete(totalPreco)
+        this.precoTotal = totalPreco + valorFrete
+
+
+        const elementoHTML = document.getElementById("valorFrete")
+        elementoHTML.innerText = `Frete: R$ ${valorFrete},00`
     }
 
     atualizarCarrinho(){
-        this.calcularTotal()
+
+        this.calcularTotal(calculaFrete)
         this.qtdProdutos = this.produtos.length
+
     }
 }
 
+
+function calculaFrete(valorPedido){
+
+    if(valorPedido >= 200){
+        return 0
+    } else if(valorPedido >= 150){
+        return 25
+    }
+
+    return 50
+}
+
+
+ 
 // OS DOIS BTNS 
 const  btnLimparCarrinho = document.getElementById("btnLimparCarrinho")
 const carrinho = new CarrinhoModel(btnLimparCarrinho)
